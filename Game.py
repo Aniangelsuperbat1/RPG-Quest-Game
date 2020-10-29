@@ -23,7 +23,7 @@ def age():
 
 def backstory():
     time.sleep(2)
-    print("The world is on the brink of extintion")
+    print("The world is on the brink of extintion.")
     time.sleep(2)
     print("The dark overlord is on the verge of victory")
     time.sleep(2)
@@ -50,6 +50,7 @@ def choose_hero():
             print("Super Duper Choice")
         else:
             print("invalid choice. Please try again")
+
 
 def Start_over():
     Play_Again = input("would you like to play again? [Y/N]:")
