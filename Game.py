@@ -23,7 +23,7 @@ def age():
 
 def backstory():
     time.sleep(2)
-    print("The world is on the brink of extintion.")
+    print("The world is on the brink of extintion")
     time.sleep(2)
     print("The dark overlord is on the verge of victory")
     time.sleep(2)
