@@ -1,13 +1,12 @@
-# RPG style game
-# choose one hero
-# random attack from 1-25
-# choose character == Archer, Mage, Warrior
-#
-
 from random import randint
-import math
 import time
 import sys
+
+
+def MainScreen():
+    print("Play")
+    print("Quit")
+    print("Help")
 
 
 def age():
@@ -65,11 +64,35 @@ def Start_over():
         print("Thank you for playing")
 
 
-age()
-backstory()
-player_one()
-time.sleep(2)
-choose_hero()
-Start_over()
+def MainScreenOptions():
+    MainScreen()
+    Choice = input("what do you want to do:")
+    if Choice == ("play"):
+        age()
+        backstory()
+        player_one()
+        time.sleep(2)
+        choose_hero()
+        Start_over()
+    elif Choice == ("help"):
+        print("Play: Plays the game")
+        print("Quit: Quits the game")
+        MainScreenOptions()
+    elif Choice == ("quit"):
+        sys.exit
 
-damage_taken = randint(1, 25)
+    while Choice not in ("play, quit, help"):
+
+        print("invalid choice, please try again")
+        MainScreenOptions()
+
+
+print()
+print()
+print()
+print("           *********************")
+print("           *  Welcome to game  *")
+print("           *********************")
+
+
+MainScreenOptions()
