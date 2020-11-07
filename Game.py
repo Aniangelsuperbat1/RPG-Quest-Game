@@ -7,40 +7,41 @@ import player_choice
 class warrior(object):
     health = 200
     attack = 50
-    magic = 0
+    magic = 5
+
 
 class elf(object):
     health = 150
-    attack = 45
-    magic = 25
+    attack = 75
+    magic = 20
 
 
 class wizard(object):
     health = 100
-    attack = 35
-    magic = 75
+    attack = 20
+    magic = 50
 
 # enemy class
 
 
 class zombie(object):
     name = "zombie"
-    health = 60
-    attack = 25
+    health = 100
+    attack = 10
     defense = 40
 
 
 class vampire(object):
     name = "vampire"
-    health = 75
-    attack = 40
+    health = 100
+    attack = 20
     defense = 35
 
 
 class werewolf(object):
     name = "werewolf"
     health = 100
-    attack = 55
+    attack = 25
     defense = 35
 
 
@@ -57,6 +58,9 @@ def age():
         if age <= str(17):
             print("you are too young to play this game!, go home!")
             sys.exit()
+        # elif age >= str(100):
+        #     print("You are way too old to be alive right now!")
+        #     sys.exit
         else:
             print("Yay! You are old enough to play this game")
 
@@ -114,7 +118,7 @@ def enemy_select(zombie, vampire, werewolf):
 
 def battle():
     enemy = enemy_select(zombie, vampire, werewolf)
-    print("you were attacked by", enemy.name)
+    print("you were attacked by a", enemy.name)
     print("What do you do?")
     while enemy.health > 0:
         choice = input("1. fight\n2. Use magic\n3. Run away")
@@ -122,22 +126,24 @@ def battle():
         if choice == "1":
             print("you attack the", enemy.name)
             enemy.health = enemy.health - character.attack
-            print("A direct hit, their remaining health is now", enemy.health)
+            print("A direct hit, their remaining health is now",
+                  enemy.health)
             if enemy.health > 0:
                 character.health = character.health - enemy.attack
                 print("you take some damage, your remaining health is now",
                       character.health)
             else:
                 if enemy.name == "zombie":
-                    enemy.health = 0
+                    enemy.health = 60
                 elif enemy.name == "vampire":
-                    enemy.health = 0
+                    enemy.health = 75
                 elif enemy.health == "werewolf":
-                    enemy.health = 0
+                    enemy.health = 100
                 print("you have defeated the enemy!")
+                break
         elif choice == "2":
             print("you use magic on the", enemy.name)
-            enemy.health = enemy.health - character.attack
+            enemy.health = enemy.health - character.magic
             print("A direct hit, their remaining health is now", enemy.health)
             if enemy.health > 0:
                 character.health = character.health - enemy.attack
@@ -145,41 +151,51 @@ def battle():
                       character.health)
             else:
                 if enemy.name == "zombie":
-                    enemy.health = 0
+                    enemy.health = 60
                 elif enemy.name == "vampire":
-                    enemy.health = 0
+                    enemy.health = 75
                 elif enemy.health == "werewolf":
-                    enemy.health = 0
+                    enemy.health = 100
                 print("Yay! you have defeated the enemy!")
+                break
         elif choice == "3":
-            print("You got away safetly")
-            break
+            print("This is no time to be scared, the fate of the world is at stake!")
+            battle()
 
 
-# def choose_hero():
-#     import characters
-#     characters.print_heroes()
-#     hero = ""
-#     while hero != "Warrior" and hero != "Archer" and hero != "Mage":
-#         hero = input("which hero would you like to be? (Warrior Archer Mage):")
-#         if hero == "Warrior":
-#             print("great choice!")
-#         elif hero == "Archer":
-#             print("Amazing Choice")
-#         elif hero == "Mage":
-#             print("Super Duper Choice")
-#         else:
-#             print("invalid choice. Please try again")
+def Path_one():
+    input("which path will you choose? 1\n 2\n 3")
+    if input == "1":
+        print("")
+        First_path()
+    elif input == "2":
+        print("")
+        Second_path()
+    elif input == "3":
+        print("")
+        Third_path()
+
+
+def First_path():
+    print("")
+
+
+def Second_path():
+    print("")
+
+
+def Third_path():
+    print("")
 
 
 def Start_over():
     Play_Again = input("would you like to play again? [Y/N]:")
     if Play_Again.casefold() == "y":
-        backstory()
         player_one()
+        backstory()
         time.sleep(2)
-        heroselect()
-        # choose_hero()
+        enemy_select(zombie, vampire, werewolf)
+        battle()
         Start_over()
     else:
         Play_Again.casefold() == "n"
@@ -194,10 +210,8 @@ def MainScreenOptions():
         backstory()
         player_one()
         time.sleep(2)
-        heroselect()
         enemy_select(zombie, vampire, werewolf)
         battle()
-        # choose_hero()
         Start_over()
     elif Choice == ("help"):
         print("Play: Plays the game")
@@ -218,5 +232,5 @@ print("           *********************")
 print("           *  Welcome to game  *")
 print("           *********************")
 
-character = heroselect
+character = heroselect()
 MainScreenOptions()
