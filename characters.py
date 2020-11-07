@@ -30,3 +30,19 @@ def print_heroes():
 #                    "Speed = 50", "Magic points = 75")
 # Character_3 = hero("Mage", "Health = 100", "Attack = 25",
 #                    "Speed = 35", "Magic points = 100")
+
+
+# def choose_hero():
+#     import characters
+#     characters.print_heroes()
+#     hero = ""
+#     while hero != "Warrior" and hero != "Archer" and hero != "Mage":
+#         hero = input("which hero would you like to be? (Warrior Archer Mage):")
+#         if hero == "Warrior":
+#             print("great choice!")
+#         elif hero == "Archer":
+#             print("Amazing Choice")
+#         elif hero == "Mage":
+#             print("Super Duper Choice")
+#         else:
+#             print("invalid choice. Please try again")

@@ -4,7 +4,7 @@ from random import randint
 class warrior(object):
     health = 200
     attack = 50
-    magic = 0
+    magic = 5
 
 
 class elf(object):
@@ -31,12 +31,12 @@ class zombie(object):
 class vampire(object):
     name = "vampire"
     health = 75
-    attack = 40
+    attack = 15
     defense = 35
 
 
 class Werewolf(object):
     name = "werewolf"
     health = 100
-    attack = 55
+    attack = 20
     defense = 35
