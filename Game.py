@@ -163,25 +163,201 @@ def battle():
             battle()
 
 
+def gameover():
+    if character.health < 1:
+        print("You have run out of health")
+        print("The world will fall to the dark lord")
+        print("You have failed in your mission")
+        print("Thank you for playing")
+
+
 def Path_one():
-    input("which path will you choose? 1\n 2\n 3")
-    if input == "1":
+    decision = input("which path will you choose? 1\n 2\n 3")
+    if decision == "1":
         print("")
         First_path()
-    elif input == "2":
+    elif decision == "2":
         print("")
         Second_path()
-    elif input == "3":
+    elif decision == "3":
         print("")
         Third_path()
 
 
 def First_path():
     print("")
+    Path = input("which path will go down?: 1\n 2\n 3")
+    if Path == "1":
+        print("")
+        print("")
+        First_path_one()
+    elif Path == "2":
+        print("")
+        print("")
+        First_path_two()
+    elif Path == "3":
+        print("")
+        print("")
+        First_path_three()
+
+
+def First_path_one():
+    print("")
+    print("")
+    Path_two = input("which path will go down?: 1\n 2\n 3")
+    if Path_two == "1":
+        print("")
+        print("")
+        First_path_one_one()
+    elif Path_two == "2":
+        print("")
+        print("")
+        First_path_two_two()
+    elif Path_two == "3":
+        print("")
+        print("")
+        First_path_three_three()
+
+
+def First_path_two():
+    print("")
+    print("")
+    Path_three = input("which path will go down?: 1\n 2\n 3")
+    if Path_three == "1":
+        print("")
+        print("")
+        First_path_one_one()
+    elif Path_three == "2":
+        print("")
+        print("")
+        First_path_two_two()
+    elif Path_three == "3":
+        print("")
+        print("")
+        First_path_three_three()
+
+
+def First_path_three():
+    print("")
+    print("")
+    Path_four = input("which path will go down?: 1\n 2\n 3")
+    if Path_four == "1":
+        print("")
+        print("")
+        First_path_one_one()
+    elif Path_four == "2":
+        print("")
+        print("")
+        First_path_two_two()
+    elif Path_four == "3":
+        print("")
+        print("")
+        First_path_three_three()
+
+
+def First_path_one_one():
+    print("")
+    Path_five = input("which path will go down?: 1\n 2\n 3")
+    if Path_five == "1":
+        print("")
+        print("")
+        First_path_one_one_one()
+    elif Path_five == "2":
+        print("")
+        print("")
+        First_path_two_two_two()
+    elif Path_five == "3":
+        print("")
+        print("")
+        First_path_three_three_three()
+
+
+def First_path_two_two():
+    print("")
+    Path_six = input("which path will go down?: 1\n 2\n 3")
+    if Path_six == "1":
+        print("")
+        print("")
+        First_path_one_one_one()
+    elif Path_six == "2":
+        print("")
+        print("")
+        First_path_two_two_two()
+    elif Path_six == "3":
+        print("")
+        print("")
+        First_path_three_three_three()
+
+
+def First_path_three_three():
+    print("")
+    Path_Seven = input("which path will go down?: 1\n 2\n 3")
+    if Path_Seven == "1":
+        print("")
+        print("")
+        First_path_one_one_one()
+    elif Path_Seven == "2":
+        print("")
+        print("")
+        First_path_two_two_two()
+    elif Path_Seven == "3":
+        print("")
+        print("")
+        First_path_three_three_three()
+
+
+def First_path_one_one_one():
+    print("")
+    print("")
+    Dark_Lord()
+
+
+def First_path_two_two_two():
+    print("")
+    print("")
+    Dark_Lord()
+
+
+def First_path_three_three_three():
+    print("")
+    print("")
+    Dark_Lord()
 
 
 def Second_path():
     print("")
+    print("")
+    Path_eight = input("which path will go down?: 1\n 2\n 3")
+    if Path_eight == "1":
+        print("")
+        print("")
+        second_path_one()
+    elif Path_eight == "2":
+        print("")
+        print("")
+        seond_path_two()
+    elif Path_eight == "3":
+        print("")
+        print("")
+        second_path_three()
+
+
+def second_path_one():
+    print("")
+    print("")
+    Path_nine = input("which path will go down?: 1\n 2\n 3")
+    if Path_nine == "1":
+        print("")
+        print("")
+        second_path_one_one()
+    elif Path_nine == "2":
+        print("")
+        print("")
+        second_path_two_two()
+    elif Path_nine == "3":
+        print("")
+        print("")
+        second_path_three_three()
 
 
 def Third_path():
@@ -194,6 +370,7 @@ def Start_over():
         player_one()
         backstory()
         time.sleep(2)
+        heroselect()
         enemy_select(zombie, vampire, werewolf)
         battle()
         Start_over()
@@ -210,6 +387,7 @@ def MainScreenOptions():
         backstory()
         player_one()
         time.sleep(2)
+        heroselect()
         enemy_select(zombie, vampire, werewolf)
         battle()
         Start_over()
